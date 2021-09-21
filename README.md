@@ -11,4 +11,10 @@ ______________
   - give the file execution permsisions if need be by `chmod +x ./linux_pyenv/new_virtualenv.sh`
   - then run the file by `./linux_pyenv/new_virtualenv.sh`
 
+______________
 
+# Reason
+I created this out of boredness and mostly because i am a lazy code and I like to make my work as easy as possible especially when i have to interupt with it on a daily basis.
+
+
+see pyenv documentation -->  https://github.com/pyenv
