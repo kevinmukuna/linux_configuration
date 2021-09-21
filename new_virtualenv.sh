@@ -4,7 +4,7 @@
 OS=`uname`
 
 read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
-if [[ -z0 $ANSWER]] || [[ $ANSWER="Y" ]] || [[ $ANSWER='y' ]];
+if [[ -z $ANSWER]] || [[ $ANSWER="Y" ]] || [[ $ANSWER="y" ]];
     then
         :
 else
