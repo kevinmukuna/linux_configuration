@@ -4,48 +4,50 @@
 OS=`uname`
 
 read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
-if [[ -z $ANSWER]] || [[ $ANSWER="Y" ]] || [[ $ANSWER="y" ]];
-    then
-        :
+if [ -z $ANSWER] || [ $ANSWER = "Y" ] || [ $ANSWER = "y" ]
+then
+   :
 else
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     cd ~/.pyenv && src/configure && make -C src
 
-    if [[ $OS="Linux" ]];then
-        # the 4 line below has been taken from pyenv offical github account: see --> https://github.com/pyenv/pyenv
-	sed -Ei -e '/^([^#]|$)/ {a \
-	export PYENV_ROOT="$HOME/.pyenv"
-	a \
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	a \
-	' -e ':a' -e '$!{n;ba};}' ~/.profile
-	echo 'eval "$(pyenv init --path)"' >>~/.profile
-	echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-    
-   if [[ $OS="Darwin" ]]; then
-      # the 5 line below has been taken from pyenv offical github account: see --> https://github.com/pyenv/pyenv
-      echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-      echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-      echo 'eval "$(pyenv init --path)"' >> ~/.profile
-      echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >> ~/.profile
+    if [ $OS="Linux" ]; then
+        # the 4 line below has been taken from pyenv official github account: see --> https://github.com/pyenv/pyenv
+      sed -Ei -e '/^([^#]|$)/ {a \
+      export PYENV_ROOT="$HOME/.pyenv"
+      a \
+      export PATH="$PYENV_ROOT/bin:$PATH"
+      a \
+      ' -e ':a' -e '$!{n;ba};}' ~/.profile
+      echo 'eval "$(pyenv init --path)"' >>~/.profile
       echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-  
-   if [[ $OS="Fedora" ]] || [[ $OS="CentOS" ]] || [[ $OS="Red Hat" ]]; then
-       # the 5 line below has been taken from pyenv offical github account: see --> https://github.com/pyenv/pyenv
-	sed -Ei -e '/^([^#]|$)/ {a \
-	export PYENV_ROOT="$HOME/.pyenv"
-	a \
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	a \
-	' -e ':a' -e '$!{n;ba};}' ~/.bash_profile
-	echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
-	echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-	echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-	echo 'eval "$(pyenv init --path)"' >> ~/.profile
-	echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-   else
-       :
-   fi
+
+    elif [[ $OS="Darwin" ]]
+    then
+        # the 5 line below has been taken from pyenv official github account: see --> https://github.com/pyenv/pyenv
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+        echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+        echo 'eval "$(pyenv init --path)"' >> ~/.profile
+        echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >> ~/.profile
+        echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+
+    elif [ $OS = "Fedora" ] || [ $OS = "CentOS" ] || [ $OS = "Red Hat" ]
+    then
+        # the 5 line below has been taken from pyenv official github account: see --> https://github.com/pyenv/pyenv
+        sed -Ei -e '/^([^#]|$)/ {a \
+        export PYENV_ROOT="$HOME/.pyenv"
+        a \
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        a \
+        ' -e ':a' -e '$!{n;ba};}' ~/.bash_profile
+        echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
+        echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+        echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+        echo 'eval "$(pyenv init --path)"' >> ~/.profile
+        echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+    else
+        :
+    fi
 fi
 
 # prompt for a name to use for this workspace
@@ -53,12 +55,12 @@ read -e -p "Enter a name for your workspace : " WORKSPACE_NAME
 mkdir $WORKSPACE_NAME && cd $WORKSPACE_NAME
 
 echo "------------Directory $WORKSPACE_NAME has been created---------------"
-echo "present working directrory is :" pwd
+echo "present working directory is :" pwd
 
-# prompt for name to use for the virttual enviroment creation
+# prompt for name to use for the virtual environment creation
 read -e -p "Enter a name for the virtual env : " VIRTUAL_ENV_NAME
 
-# diplay the list of python available to install with pyenv
+# display the list of python available to install with pyenv
 pyenv install --list
 
 # prompt for python version to use
@@ -68,7 +70,7 @@ NAME=$VIRTUAL_ENV_NAME"_"$NAME$VERSION
 
 pyenv virtualenv $VERSION $NAME
 
-# the statement below checks if the last command was executed succesfully, else it install the python version and re-run the last command
+# the statement below checks if the last command was executed successfully, else it install the python version and re-run the last command
 if executed_succesfful $? -eq 0;
   then
      :
@@ -79,7 +81,6 @@ fi
 
 echo "your virtualenv is created using the following name : " $NAME
 
-# set the newly created virtual enviroment to the workspace(this should not consist of any dependecies)
-# you can locate your newly worspace by cd <name_of_workspace> then run pip freeze
+# set the newly created virtual environment to the workspace(this should not consist of any dependencies)
+# you can locate your newly workspace by cd <name_of_workspace> then run pip freeze
 pyenv local $NAME
-
