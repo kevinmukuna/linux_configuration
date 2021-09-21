@@ -1,7 +1,7 @@
 # linux_pyenv
-This repository is used to simplify pyenv virtualenv creation for people uisng it daily or uysing multiple versions more frequently
+This repository is used to simplify pyenv virtualenv creation for people uisng it daily or using multiple versions more frequently.
 
-Please do not distribute without arediting the owner. Thanks.
+Please do not distribute without accrediting the owner. Thanks.
 
 ______________
 
