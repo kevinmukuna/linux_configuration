@@ -6,9 +6,12 @@ Please do not distribute without arediting the owner. Thanks.
 ______________
 
 # Instalation Istructions:
-  > clone this repo
-  > open your terminal in the directory in which you cloned this repo
-  > give the file execution permsisions if need be by `chmod +x linux_pyenv`
-  > then run the file by `./linux_pyenv/new_virtualenv.sh`
+  >>  clone this repo by `git clone https://github.com/kevinmukuna/linux_pyenv.git` in your terminal
+  >> 
+  >>  open your terminal in the directory in which you cloned this repo
+  >>  
+  >>  give the file execution permsisions if need be by `chmod +x /linux_pyenv/new_virtualenv.sh`
+  > 
+  >> then run the file by `./linux_pyenv/new_virtualenv.sh`
 
 
