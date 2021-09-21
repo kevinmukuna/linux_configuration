@@ -5,7 +5,7 @@ Please do not distribute without arediting the owner. Thanks.
 
 ______________
 
-# Istalation Istructions:
+# Instalation Istructions:
   > clone this repo
   > open your terminal in the directory in which you cloned this repo
   > give the file execution permsisions if need be by `chmod +x linux_pyenv`
