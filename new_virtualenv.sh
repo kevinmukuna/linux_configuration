@@ -3,10 +3,10 @@
 # get current operating systems
 OS=`uname`
 
-#read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
-#if [ -z $ANSWER ] || [ $ANSWER = "Y" ] || [ $ANSWER = "y" ]
-pyenv version
-if executed_succesfful $? -eq 0;
+read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
+if [ -z $ANSWER ] || [ $ANSWER = "Y" ] || [ $ANSWER = "y" ]
+#pyenv version
+#if executed_succesfful $? -eq 0;
   then
      :
 else
@@ -14,7 +14,7 @@ else
     cd ~/.pyenv && src/configure && make -C src
 
     if [ $OS="Linux" ]; then
-      # the 4 line below has been taken from pyenv official github account: see --> https://github.com/pyenv/pyenv
+        # the 4 line below has been taken from pyenv official github account: see --> https://github.com/pyenv/pyenv
       sed -Ei -e '/^([^#]|$)/ {a \
       export PYENV_ROOT="$HOME/.pyenv"
       a \
@@ -84,6 +84,5 @@ fi
 echo "your virtualenv is created using the following name : " $NAME
 
 # set the newly created virtual environment to the workspace(this should not consist of any dependencies)
-# you can locate your newly workspace by cd <name_of_workspace> 
-# verify that the virtualenv has been created properly `pip freeze`
+# you can locate your newly workspace by cd <name_of_workspace> then run pip freeze
 pyenv local $NAME
