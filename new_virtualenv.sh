@@ -3,10 +3,12 @@
 # get current operating systems
 OS=`uname`
 
-read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
-if [ -z $ANSWER] || [ $ANSWER = "Y" ] || [ $ANSWER = "y" ]
-then
-   :
+#read -e -p "Do you have pyenv installed ? (Y/n) :  " ANSWER
+#if [ -z $ANSWER ] || [ $ANSWER = "Y" ] || [ $ANSWER = "y" ]
+pyenv version
+if executed_succesfful $? -eq 0;
+  then
+     :
 else
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     cd ~/.pyenv && src/configure && make -C src
