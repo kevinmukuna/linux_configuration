@@ -3,7 +3,7 @@ This repository is used to simplify pyenv virtualenv creation for people uisng i
 
 The script is simple but very handy and powerful.
 
-Please do not distribute without accrediting the owner. Thanks.
+Please accrediting if used. Thanks.
 
 ______________
 
