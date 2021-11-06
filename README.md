@@ -23,6 +23,8 @@ see pyenv documentation -->  https://github.com/pyenv
 
 
 
+Contributors
+---
 <a href="https://github.com/kevinmukuna/linux_pyenv/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=lark-parser/lark" />
+  <img src="https://contributors-img.web.app/image?repo=kevinmukuna/linux_pyenv" />
 </a>
