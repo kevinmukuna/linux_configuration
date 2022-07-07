@@ -1,0 +1,16 @@
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/PaperColor.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/aquarium.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/deep-space.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/dracula.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/enfocado.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/everblush.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/gruvbox-material.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/gruvbox.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/iceberg.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/material.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/nord.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/onedark.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/onehalfdark.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/onehalflight.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/sublimemonokai.vim
+https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/colors/undead.vim
