@@ -1,0 +1,71 @@
+#!/bin/bash
+
+download_vim_colors() {
+	cd 
+	echo "----------------downloading color.txt-----------------"
+	wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
+	cd "$HOME/.vim/colors" 
+	echo "-----------------------downlaod each vim color-------------------------"
+	wget -i "$HOME/vim-colors.txt"
+
+
+
+}
+
+# checking if dir exists
+if [ -d "$HOME/.vim/" ] ; then
+    if [ -d "$HOME/.vim/colors" ] ; then
+    	:	
+    else
+	  cd .vim && mkdir colors && cd colors
+    fi
+fi
+
+# dowload color scheme file  does not already exist
+if [ ! -f "$HOME/.vim/colors/sublimemonokai.vim" ] ; then
+	os=$(uname)
+	if [ "$os" = "Linux" ] ; then
+   		sudo apt install wget
+		download_vim_colors
+	elif [ "$os" = "Darwin" ] ; then
+		brew install wget
+		download_vim_colors
+	else
+		echo "could download color scheme"
+	fi
+fi
+
+
+declare configs=("set autoindent" "set textwidth=80" "set smartindent" "set number" 
+				"set mouse=a" "syntax on"  "set tabstop=4"
+)
+for config in ${!configs[@]}; do
+	if ! grep -q "${configs[$config]}" "$HOME/.vimrc"
+	then
+		echo "${configs[$config]}" >>  "$HOME/.vimrc"
+		echo "${configs[$config]}"
+	fi
+done
+
+declare coloArray=("aquarium"  "deep-space"  "enfocado"  "everforest" "gruvbox"  "material"  
+					"onedark"      "onehalflight"  "sublimemonokai" "codedark"  "dracula"  
+					"everblush"  "gruvbox-material"  "iceberg"  "nord"      "onehalfdark"  
+					"PaperColor"    "undead"
+)
+for str in ${coloArray[@]}; do
+    if ! grep -q "colorscheme $str" "$HOME/.vimrc"
+	then
+		if [ "$str" == "sublimemonokai" ]
+		then
+			echo >> "$HOME/.vimrc"
+			echo "\"  THIS IS YOUR DEFAULT COLOR, COMMENT AND UNCOMMNET YOUR DEFAULT COLOR OF CHOICE" >> "$HOME/.vimrc"
+			echo "colorscheme sublimemonokai" >> "$HOME/.vimrc"
+			echo >> "$HOME/.vimrc"
+		else
+			echo " \"  colorscheme $str" >> "$HOME/.vimrc"
+		fi
+	fi
+done
+
+
+echo "YOUR DEFAULT COLOR FOR VIM IS SET TO sublimemonokai" && echo
