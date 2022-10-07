@@ -4,9 +4,6 @@ download_vim_colors() {
 	cd 
 	echo "----------------downloading color.txt-----------------"
 	wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
-	if [ ! -d "$HOME/.vim" ] ; then
-	   mkdir "$HOME/.vim"
-	fi
 	cd "$HOME/.vim/colors" 
 	echo "-----------------------downlaod each vim color-------------------------"
 	wget -i "$HOME/vim-colors.txt"
@@ -19,13 +16,13 @@ declare coloArray=("aquarium"  "deep-space"  "enfocado"  "everforest" "gruvbox" 
 )
 
 # checking if dir exists
-if [ -d "$HOME/.vim/" ] ; then
-    if [ -d "$HOME/.vim/colors" ] ; then
-    	:	
-    else
-	cd .vim && mkdir colors && cd colors
-    fi
+if [ ! -d "$HOME/.vim/" ] ; then
+    mkdir "$HOME/.vim"
 fi
+if [ ! -d "$HOME/.vim/colors" ] ; then
+	cd .vim && mkdir colors && cd colors
+fi
+
 
 # dowload color scheme file  does not already exist
 #for str in ${coloArray[@]}; do
