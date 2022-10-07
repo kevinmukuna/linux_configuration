@@ -81,5 +81,5 @@ done
 #if [ $DIFF -lt 60 ] ; then 
 # 	echo "YOUR DEFAULT COLOR FOR VIM IS SET TO sublimemonokai" && echo
 #else
-    echo "Your vim colors are up to date"
+#    echo "Your vim colors are up to date"
 #fi
