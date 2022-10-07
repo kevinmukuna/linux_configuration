@@ -6,7 +6,7 @@ download_vim_colors() {
 	wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
 	cd "$HOME/.vim/colors" 
 	echo "-----------------------downlaod each vim color-------------------------"
-	wget -i "$HOME/vim-colors.txt"
+	wget "$HOME/vim-colors.txt"
 }
 # list of vim colors
 declare coloArray=("aquarium"  "deep-space"  "enfocado"  "everforest" "gruvbox"  "material"  
@@ -20,7 +20,10 @@ if [ -d "$HOME/.vim/" ] ; then
     if [ -d "$HOME/.vim/colors" ] ; then
     	:	
     else
-	  cd .vim && mkdir colors && cd colors
+    	if [ ! -d "$HOME/.vim" ] ; then
+	   mkdir "$HOME/.vim"
+	fi
+	cd .vim && mkdir colors && cd colors
     fi
 fi
 
@@ -64,6 +67,12 @@ for str in ${coloArray[@]}; do
 		fi
 	fi
 done
+
+# cleanup 
+#cd $HOME
+#rm -rf ./*.vim
+#rm -rf ./*.vim.*
+#rm -rf ./*-colors.txt.*
 # FILE_DATE=$(stat "$HOME/.vimrc" -c %>)
 # echo "------------$FILE_DATE--------------"
 # CUR_DATE=$(date +%s)
