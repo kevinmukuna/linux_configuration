@@ -9,7 +9,7 @@ download_vim_colors() {
 	fi
 	cd "$HOME/.vim/colors" 
 	echo "-----------------------downlaod each vim color-------------------------"
-	wget -i "$HOME/.vim/vim-colors.txt"
+	wget -i "$HOME/vim-colors.txt"
 }
 # list of vim colors
 declare coloArray=("aquarium"  "deep-space"  "enfocado"  "everforest" "gruvbox"  "material"  
