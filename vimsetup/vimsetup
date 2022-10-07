@@ -3,7 +3,9 @@
 download_vim_colors() {
 	cd 
 	echo "----------------downloading color.txt-----------------"
-	wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
+	if [ ! -f "$HOME/vim-colors.txt" ] ; then
+		wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
+	fi
 	cd "$HOME/.vim/colors" 
 	echo "-----------------------downlaod each vim color-------------------------"
 	wget -i "$HOME/vim-colors.txt"
