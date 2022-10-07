@@ -69,10 +69,10 @@ for str in ${coloArray[@]}; do
 done
 
 # cleanup 
-cd $HOME
+#cd $HOME
 #rm -rf ./*.vim
-rm -rf ./*.vim.*
-rm -rf ./*-colors.txt.*
+#rm -rf ./*.vim.*
+#rm -rf ./*-colors.txt.*
 # FILE_DATE=$(stat "$HOME/.vimrc" -c %>)
 # echo "------------$FILE_DATE--------------"
 # CUR_DATE=$(date +%s)
