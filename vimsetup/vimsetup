@@ -43,7 +43,7 @@ if [ ! -f "$HOME/.vim/colors/$str.vim" ] ; then
 fi
 #done
 
-declare configs=("set autoindent" "set textwidth=80" "set smartindent" "set number" 
+declare configs=("set autoindent" "set textwidth=140" "set smartindent" "set number" 
 				"set mouse=a" "syntax on"  "set tabstop=4"
 )
 for config in ${!configs[@]}; do
