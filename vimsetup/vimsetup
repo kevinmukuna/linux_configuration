@@ -72,14 +72,14 @@ done
 #rm -rf ./*.vim
 #rm -rf ./*.vim.*
 #rm -rf ./*-colors.txt.*
-FILE_DATE=$(stat "$HOME/.vimrc" -c %>)
-echo "------------$FILE_DATE--------------"
-CUR_DATE=$(date +%s)
-echo "---------------$CUR_DATE ------------------"
-DIFF=$(expr $CUR_DATE - $FILE_DATE)
-echo "-----------------$DIFF ---------------------------"
-if [ $DIFF -lt 60 ] ; then 
- 	echo "YOUR DEFAULT COLOR FOR VIM IS SET TO sublimemonokai" && echo
-else
+#FILE_DATE=$(stat "$HOME/.vimrc" -c %>)
+#echo "------------$FILE_DATE--------------"
+#CUR_DATE=$(date +%s)
+#echo "---------------$CUR_DATE ------------------"
+#DIFF=$(expr $CUR_DATE - $FILE_DATE)
+#echo "-----------------$DIFF ---------------------------"
+#if [ $DIFF -lt 60 ] ; then 
+# 	echo "YOUR DEFAULT COLOR FOR VIM IS SET TO sublimemonokai" && echo
+#else
     echo "Your vim colors are up to date"
-fi
+#fi
