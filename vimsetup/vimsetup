@@ -4,9 +4,12 @@ download_vim_colors() {
 	cd 
 	echo "----------------downloading color.txt-----------------"
 	wget https://raw.githubusercontent.com/kevinmukuna/linux_configuration/master/vimsetup/vim-colors.txt
+	if [ ! -d "$HOME/.vim" ] ; then
+	   mkdir "$HOME/.vim"
+	fi
 	cd "$HOME/.vim/colors" 
 	echo "-----------------------downlaod each vim color-------------------------"
-	wget "$HOME/vim-colors.txt"
+	wget -i "$HOME/vim-colors.txt"
 }
 # list of vim colors
 declare coloArray=("aquarium"  "deep-space"  "enfocado"  "everforest" "gruvbox"  "material"  
@@ -20,29 +23,26 @@ if [ -d "$HOME/.vim/" ] ; then
     if [ -d "$HOME/.vim/colors" ] ; then
     	:	
     else
-    	if [ ! -d "$HOME/.vim" ] ; then
-	   mkdir "$HOME/.vim"
-	fi
 	cd .vim && mkdir colors && cd colors
     fi
 fi
 
 # dowload color scheme file  does not already exist
-for str in ${coloArray[@]}; do
+#for str in ${coloArray[@]}; do
 	# TODO: modify this so as alter the .txt file to only include the vim files that are not already installed 
-	if [ ! -f "$HOME/.vim/colors/$str.vim" ] ; then
-		os=$(uname)
-		if [ "$os" = "Linux" ] ; then
-			sudo apt install wget
-			download_vim_colors
-		elif [ "$os" = "Darwin" ] ; then
-			brew install wget
-			download_vim_colors
-		else
-			echo "could download color scheme"
-		fi
+if [ ! -f "$HOME/.vim/colors/$str.vim" ] ; then
+	os=$(uname)
+	if [ "$os" = "Linux" ] ; then
+		sudo apt install wget
+		download_vim_colors
+	elif [ "$os" = "Darwin" ] ; then
+		brew install wget
+		download_vim_colors
+	else
+		echo "could download color scheme"
 	fi
-done
+fi
+#done
 
 declare configs=("set autoindent" "set textwidth=80" "set smartindent" "set number" 
 				"set mouse=a" "syntax on"  "set tabstop=4"
