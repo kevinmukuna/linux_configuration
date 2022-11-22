@@ -12,7 +12,7 @@ ______________
   - open your terminal in the directory in which you cloned this repo
   - cd automating_pyenv
   - give the file execution permsisions if need be by `chmod +x ./new_virtualenv.sh`
-  - then run the file by `./linux_pyenv/new_virtualenv.sh`
+  - then run the file by `./new_virtualenv.sh`
 
 ______________
 
