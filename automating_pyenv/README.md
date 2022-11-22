@@ -10,6 +10,7 @@ ______________
 # Instalation Istructions:
   - clone this repo by `git clone https://github.com/kevinmukuna/linux_pyenv.git` in your terminal 
   - open your terminal in the directory in which you cloned this repo
+  - cd automating_pyenv
   - give the file execution permsisions if need be by `chmod +x ./linux_pyenv/new_virtualenv.sh`
   - then run the file by `./linux_pyenv/new_virtualenv.sh`
 
